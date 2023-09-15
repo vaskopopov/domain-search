@@ -26,13 +26,14 @@
                     </div>
 
                 </div>
+                <?php if(!isset($_GET['domainExtension'])) {$tld = '.com';} ?>
                 <div class="col-md-1 mb-3">
                     <select class="custom-select" id="domainExtension" required name='domainExtension'>
                         <!-- <option selected disabled value="">...</option> -->
-                        <option value='.com' <?php if ($_GET['domainExtension'] == '.com') { ?>selected="true" <?php }; ?>>.com</option>
-                        <option value='.edu' <?php if ($_GET['domainExtension'] == '.edu') { ?>selected="true" <?php }; ?>>.edu</option>
-                        <option value='.org' <?php if ($_GET['domainExtension'] == '.org') { ?>selected="true" <?php }; ?>>.org</option>
-                        <option value='.gov' <?php if ($_GET['domainExtension'] == '.gov') { ?>selected="true" <?php }; ?>>.gov</option>
+                        <option value='.com' <?php if ($tld == '.com') { ?>selected="true" <?php }; ?>>.com</option>
+                        <option value='.edu' <?php if ($tld == '.edu') { ?>selected="true" <?php }; ?>>.edu</option>
+                        <option value='.org' <?php if ($tld == '.org') { ?>selected="true" <?php }; ?>>.org</option>
+                        <option value='.gov' <?php if ($tld == '.gov') { ?>selected="true" <?php }; ?>>.gov</option>
                     </select>
                 </div>
                 <div class="col-auto mb-3">
@@ -44,6 +45,7 @@
             error_reporting(0);
             if(isset($_GET['domain'])){
                 $domain = $_GET['domain'].$_GET['domainExtension'];
+                $tld=$_GET['domainExtension'];
                 if ( gethostbyname($domain) != $domain ) {
                     echo "<h3 class='fail'>Domain ".$domain." Already Registered!</h3>";
                 }
