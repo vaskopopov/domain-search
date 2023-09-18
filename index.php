@@ -22,13 +22,16 @@
                         <div class="input-group-prepend">
                             <div class="input-group-text">www.</div>
                         </div>
-                        <input type="text" class="form-control" id="domainCheck" name='domain' required placeholder="Please type here your desired domain. E.g. mysite.com" value="<?php if(isset($_POST['domain'])){ echo $_POST['domain']; } ?>">
+                        <input type="text" class="form-control" id="domainCheck" name='domain' required placeholder="Your desired domain. E.g. mysite.com" value="<?php if(isset($_POST['domain'])){ echo $_POST['domain']; } ?>">
                     </div>
 
                 </div>
 
                 <div class="col-auto mb-3">
-                    <button id="checkdomain" class="btn btn-primary">Check</button>
+                    <button id="btn_checkdomain" class="btn btn-primary">Check</button>
+                </div>
+                <div class="col-auto mb-3">
+                    <button id="btn_reset" class="btn btn-info">Reset check</button>
                 </div>
             </div>
         </form>

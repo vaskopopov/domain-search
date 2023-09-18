@@ -47,3 +47,11 @@ h3.fail {
     border: none;
     outline: none;
 }
+
+#result {
+    display: none;
+    width: auto;
+    min-height: 50px;
+    background: red;
+    padding: 20px;
+}
