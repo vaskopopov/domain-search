@@ -24,8 +24,8 @@ document.getElementById('btn_checkdomain').addEventListener("click", function(e)
             return response.json();
         })
         .then((response) => {
-            result.style.backgroundColor = response.bg_color;
-            result.innerHTML = response.message;
+            result.style.backgroundColor = response.status ? "green" : "red";
+            result.innerHTML = response.message + response.mail;
         })
         .then(() => result.style.display = 'block')
     }
